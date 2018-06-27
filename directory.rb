@@ -4,10 +4,12 @@ def print_header
 end
 
 def print(students)
-    acc = 1
+    puts "Show students whose name's begin with this letter: "
+    start_letter = gets.chomp
     students.each do |student|
-        puts "#{acc}. #{student[:name]} (#{student[:cohort]} cohort)"
-        acc += 1
+        if student[:name][0] == start_letter   
+          puts "#{student[:name]} (#{student[:cohort]} cohort)"
+        end
     end
 end
 
@@ -29,6 +31,4 @@ def input_students
 end    
 
 students = input_students
-print_header
 print(students)
-print_footer(students)
