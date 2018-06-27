@@ -1,13 +1,12 @@
+
 def print_header
     puts "The students of Villains Academy"
     puts "----------------------------"
 end
 
 def print(students)
-    puts "Show students whose name's begin with this letter: "
-    start_letter = gets.chomp
     students.each do |student|
-        if student[:name][0] == start_letter   
+        if student[:name].length < 12   
           puts "#{student[:name]} (#{student[:cohort]} cohort)"
         end
     end
