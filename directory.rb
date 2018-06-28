@@ -3,20 +3,14 @@ def print_header
     puts "----------------------------"
 end
 
-def print(students)
-    accumulator = 0
-    while accumulator <= @students.count - 1 do
-        if  !@students[accumulator].empty?
-            puts "#{@students[accumulator][:name]} (#{@students[accumulator][:cohort]} cohort)"
-            accumulator += 1
-        else
-            break
-        end
+def print(arguement)
+    arguement.each do |x|
+        puts "#{x[:name]} (#{x[:cohort]} cohort)"
     end
 end
 
-def print_footer(students)
-    puts "Overall, we have #{students.count} great students."
+def print_footer(arguement)
+    puts "Overall, we have #{arguement.count} great students."
 end
 
 def input_students
