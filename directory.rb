@@ -5,7 +5,7 @@ end
 
 def print(arguement)
     arguement.each do |x|
-        puts "#{x[:name]} (#{x[:cohort]} cohort)"
+        puts "#{x[:name]} (#{x[:cohort]} cohort) is #{x[:age]} years old, measures #{x[:height]} meters high and loves #{x[:favourite]}!"
     end
 end
 
@@ -19,8 +19,15 @@ def input_students
     @students = []
     name = gets.chomp
     while !name.empty? do
-        @students << {name: name, cohort: :November}
+        puts "And his or her age?"
+        age = gets.chomp
+        puts "And their height?"
+        height = gets.chomp.to_s
+        puts "And their favourite non-fictional character?"
+        favourite = gets.chomp
+        @students << {name: name, cohort: :November, age: age, height: height, favourite: favourite}
         puts "Now we have #{@students.count} students"
+        puts "Next student:"
         name = gets.chomp
     end
     @students
