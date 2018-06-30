@@ -1,6 +1,6 @@
 def print_header
-    puts "The students of Villains Academy"
-    puts "------------------------------------"
+    puts "The Students of Villains Academy"
+    puts "--------------------------------"
 end
 
 def print(arguement)
@@ -43,6 +43,10 @@ def input_students
 end
 
 @students = input_students
-print_header
-print(@students)
-print_footer(@students)
+if @students.count > 0
+  print_header
+  print(@students)
+  print_footer(@students)
+else
+  puts "There are no students :("
+end
