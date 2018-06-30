@@ -10,7 +10,11 @@ def print(arguement)
 end
 
 def print_footer(arguement)
-    puts "Overall, we have #{arguement.count} great students."
+    if arguement.count <= 1
+      puts "Overall, we have #{arguement.count} great student."
+    else
+      puts "Overall, we have #{arguement.count} great students."
+    end
 end
 
 def input_students
@@ -23,8 +27,13 @@ def input_students
         cohort = gets.chomp.capitalize
         if cohort == "January" || cohort == "February" || cohort == "March" || cohort == "April" || cohort == "May" || cohort == "June" || cohort == "July" || cohort == "August" || cohort == "September" || cohort == "October" || cohort == "November" || cohort == "December"
           @students << {name: name, cohort: cohort.to_sym}
-          puts "Now we have #{@students.count} students"
-          puts "Next student:"
+          if @students.count <= 1
+            puts "Now we have #{@students.count} student"
+            puts "Next student:"
+          else 
+            puts "Now we have #{@students.count} students"
+            puts "Next student:"
+          end
           name = gets.chomp.capitalize
         else
           puts "That month doesn't exist, check your spelling!"
